@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PackageCheck - AI-Powered Packaging QC</title>
+    <title>Creative Koi - AI-Powered Packaging QC</title>
     <style>
         * {
             margin: 0;
@@ -19,6 +19,7 @@
         color: #333;
     }
 
+    /* Header */
     .header {
         background: white;
         padding: 1rem 0;
@@ -41,7 +42,7 @@
     .logo {
         font-size: 1.5rem;
         font-weight: bold;
-        color: #4285f4;
+        color: #333;
     }
 
     .nav-links {
@@ -67,248 +68,348 @@
         align-items: center;
     }
 
-    .btn-outline {
-        color: #4285f4;
-        border: 2px solid #4285f4;
-        padding: 0.5rem 1rem;
-        border-radius: 6px;
+    .sign-in {
+        color: #666;
         text-decoration: none;
-        transition: all 0.3s;
+        font-weight: 500;
     }
 
-    .btn-outline:hover {
-        background: #4285f4;
-        color: white;
-    }
-
-    .btn-primary {
-        background: #4285f4;
+    .try-free {
+        background: #333;
         color: white;
         padding: 0.75rem 1.5rem;
-        border-radius: 6px;
+        border-radius: 8px;
         text-decoration: none;
         font-weight: 500;
         transition: background 0.3s;
     }
 
-    .btn-primary:hover {
-        background: #3367d6;
+    .try-free:hover {
+        background: #555;
     }
 
+    /* Main content */
     .main-content {
         padding-top: 80px;
     }
 
-    .hero {
-        background: linear-gradient(135deg, #f8f9ff 0%, #e8f0fe 100%);
-        padding: 80px 0;
-        text-align: center;
-    }
-
-    .hero-container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 0 2rem;
-    }
-
-    .hero h1 {
-        font-size: 3rem;
-        font-weight: bold;
-        margin-bottom: 1.5rem;
-        color: #1a1a1a;
-    }
-
-    .hero p {
-        font-size: 1.25rem;
-        color: #666;
-        margin-bottom: 2rem;
-    }
-
-    .hero-cta {
-        margin-bottom: 1rem;
-    }
-
-    .hero-note {
-        color: #888;
-        font-size: 0.9rem;
-    }
-
-    .how-it-works {
-        padding: 80px 0;
-        background: white;
-    }
-
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-    }
-
-    .section-title {
-        text-align: center;
-        margin-bottom: 3rem;
-    }
-
-    .section-title h2 {
-        font-size: 2.5rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
-    }
-
-    .steps {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-    }
-
-    .step {
-        text-align: center;
-        padding: 2rem;
-    }
-
-    .step-number {
-        width: 60px;
-        height: 60px;
-        background: #4285f4;
-        color: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        font-weight: bold;
-        margin: 0 auto 1.5rem;
-    }
-
-    .features {
-        padding: 80px 0;
-        background: #f8f9ff;
-    }
-
-    .features-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-    }
-
-    .feature {
-        background: white;
-        padding: 2rem;
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-
-    .feature-icon {
-        width: 50px;
-        height: 50px;
-        background: #34a853;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-    }
-
-    .pricing {
-        padding: 80px 0;
-        background: white;
-    }
-
-    .pricing-cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    .pricing-card {
-        background: white;
-        border: 2px solid #e0e0e0;
-        border-radius: 12px;
-        padding: 2rem;
-        text-align: center;
-        position: relative;
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .pricing-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    }
-
-    .pricing-card.featured {
-        border-color: #4285f4;
-        transform: scale(1.05);
-    }
-
-    .pricing-badge {
-        position: absolute;
-        top: -12px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: #4285f4;
-        color: white;
-        padding: 0.5rem 1rem;
-        border-radius: 20px;
-        font-size: 0.9rem;
-        font-weight: 500;
-    }
-
-    .pricing-title {
-        font-size: 1.5rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
-    }
-
-    .pricing-price {
-        font-size: 3rem;
-        font-weight: bold;
-        color: #4285f4;
-        margin-bottom: 0.5rem;
-    }
-
-    .pricing-period {
-        color: #666;
-        margin-bottom: 2rem;
-    }
-
-    .pricing-features {
-        list-style: none;
-        margin-bottom: 2rem;
-    }
-
-    .pricing-features li {
-        padding: 0.5rem 0;
-        color: #666;
-    }
-
     .page {
         display: none;
-        min-height: calc(100vh - 80px);
     }
 
     .page.active {
         display: block;
     }
 
+    /* Hero Section */
+    .hero {
+        background: #f8f9ff;
+        padding: 120px 0 80px;
+    }
+
+    .hero-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+    }
+
+    .hero-content .highlight {
+        color: #4285f4;
+    }
+
+    .hero-content p {
+        font-size: 1.25rem;
+        color: #666;
+        margin-bottom: 3rem;
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 4rem;
+    }
+
+    .btn-primary {
+        background: #4285f4;
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .btn-primary:hover {
+        background: #3367d6;
+    }
+
+    .btn-secondary {
+        background: transparent;
+        color: #333;
+        padding: 1rem 2rem;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s;
+    }
+
+    .btn-secondary:hover {
+        border-color: #4285f4;
+        color: #4285f4;
+    }
+
+    .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .stat {
+        text-align: left;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #333;
+        display: block;
+    }
+
+    .stat-label {
+        color: #666;
+        font-size: 0.9rem;
+    }
+
+    .hero-image {
+        background: linear-gradient(135deg, #d4af7a 0%, #c19b5c 100%);
+        border-radius: 20px;
+        padding: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 400px;
+        color: white;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    /* Features Section */
+    .features {
+        padding: 80px 0;
+        background: white;
+    }
+
+    .features-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    .features-header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .features h2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .features p {
+        font-size: 1.25rem;
+        color: #666;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+
+    .feature {
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        background: #4285f4;
+        border-radius: 50%;
+        margin: 0 auto 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+    }
+
+    .feature-icon.green {
+        background: #34a853;
+    }
+
+    .feature-icon.purple {
+        background: #9c27b0;
+    }
+
+    .feature h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .feature p {
+        color: #666;
+        line-height: 1.6;
+    }
+
+    /* Testimonials */
+    .testimonials {
+        padding: 80px 0;
+        background: white;
+    }
+
+    .testimonials-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        text-align: center;
+    }
+
+    .testimonials h2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .testimonials-subtitle {
+        font-size: 1.1rem;
+        color: #666;
+        margin-bottom: 4rem;
+    }
+
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .testimonial {
+        background: #f8f9ff;
+        padding: 2rem;
+        border-radius: 12px;
+        text-align: left;
+    }
+
+    .stars {
+        color: #ffc107;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .testimonial-text {
+        font-style: italic;
+        margin-bottom: 1.5rem;
+        color: #666;
+    }
+
+    .testimonial-author {
+        font-weight: bold;
+        margin-bottom: 0.25rem;
+    }
+
+    .testimonial-title {
+        color: #666;
+        font-size: 0.9rem;
+    }
+
+    /* CTA Section */
+    .cta {
+        background: #4285f4;
+        color: white;
+        padding: 80px 0;
+        text-align: center;
+    }
+
+    .cta-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    .cta h2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .cta p {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+    }
+
+    .cta-button {
+        background: white;
+        color: #4285f4;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: transform 0.3s;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-2px);
+    }
+
+    /* QC Tool */
     .qc-tool {
-        padding: 40px 0;
         background: #f8f9ff;
         min-height: calc(100vh - 80px);
+        padding: 40px 0;
     }
 
     .tool-container {
-        max-width: 1000px;
+        max-width: 1200px;
         margin: 0 auto;
         padding: 0 2rem;
     }
 
     .tool-header {
-        text-align: center;
         margin-bottom: 3rem;
+    }
+
+    .tool-header h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    .tool-header p {
+        color: #666;
+        font-size: 1.1rem;
     }
 
     .tool-grid {
@@ -317,13 +418,20 @@
         gap: 3rem;
     }
 
-    .upload-section {
+    .tool-panel {
         background: white;
-        padding: 2rem;
         border-radius: 12px;
+        padding: 2rem;
         box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
 
+    .panel-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Upload Area */
     .upload-area {
         border: 2px dashed #4285f4;
         border-radius: 12px;
@@ -339,11 +447,18 @@
         background: #e8f0fe;
     }
 
-    .upload-area.dragover {
-        background: #e8f0fe;
-        border-color: #3367d6;
+    .upload-area.has-file {
+        border-color: #34a853;
+        background: #e8f5e8;
     }
 
+    .upload-icon {
+        font-size: 2rem;
+        color: #4285f4;
+        margin-bottom: 1rem;
+    }
+
+    /* Form Styling */
     .form-group {
         margin-bottom: 1.5rem;
     }
@@ -352,20 +467,28 @@
         display: block;
         margin-bottom: 0.5rem;
         font-weight: 500;
+        color: #333;
     }
 
     .form-group select,
-    .form-group input {
+    .form-group input[type="text"] {
         width: 100%;
         padding: 0.75rem;
         border: 2px solid #e0e0e0;
         border-radius: 6px;
         font-size: 1rem;
+        transition: border-color 0.3s;
     }
 
-    .checkbox-group {
+    .form-group select:focus,
+    .form-group input[type="text"]:focus {
+        outline: none;
+        border-color: #4285f4;
+    }
+
+    .checkbox-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
         gap: 0.5rem;
     }
 
@@ -397,27 +520,24 @@
         cursor: not-allowed;
     }
 
-    .results-section {
-        background: white;
-        padding: 2rem;
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-
+    /* Results Panel */
     .results-placeholder {
         text-align: center;
         color: #666;
         padding: 4rem 2rem;
     }
 
-    .hidden {
-        display: none;
+    .results-placeholder .icon {
+        font-size: 3rem;
+        color: #ccc;
+        margin-bottom: 1rem;
     }
 
+    /* Auth Pages */
     .auth-container {
-        max-width: 400px;
+        max-width: 500px;
         margin: 4rem auto;
-        padding: 2rem;
+        padding: 3rem;
         background: white;
         border-radius: 12px;
         box-shadow: 0 4px 20px rgba(0,0,0,0.1);
@@ -426,11 +546,20 @@
     .auth-title {
         text-align: center;
         margin-bottom: 2rem;
-        font-size: 1.5rem;
+        font-size: 1.75rem;
         font-weight: bold;
     }
 
     .auth-form input {
+        width: 100%;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+        border: 2px solid #e0e0e0;
+        border-radius: 6px;
+        font-size: 1rem;
+    }
+
+    .auth-form select {
         width: 100%;
         padding: 0.75rem;
         margin-bottom: 1rem;
@@ -462,17 +591,88 @@
         text-decoration: none;
     }
 
+    .hidden {
+        display: none;
+    }
+
+    /* Footer */
+    .footer {
+        background: #f8f9ff;
+        padding: 60px 0 30px;
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer-column h4 {
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .footer-column ul {
+        list-style: none;
+    }
+
+    .footer-column ul li {
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-column ul li a {
+        color: #666;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .footer-column ul li a:hover {
+        color: #4285f4;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid #e0e0e0;
+        color: #666;
+    }
+
+    /* Responsive */
     @media (max-width: 768px) {
-        .hero h1 {
-            font-size: 2rem;
+        .nav-links {
+            display: none;
+        }
+        
+        .hero-container {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+        
+        .hero-content h1 {
+            font-size: 2.5rem;
+        }
+        
+        .features-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .testimonials-grid {
+            grid-template-columns: 1fr;
         }
         
         .tool-grid {
             grid-template-columns: 1fr;
         }
         
-        .nav-links {
-            display: none;
+        .footer-grid {
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 </style>
@@ -483,14 +683,15 @@
     <!-- Header -->
     <header class="header">
         <nav class="nav">
-            <div class="logo">PackageCheck</div>
+            <div class="logo">Creative Koi</div>
             <ul class="nav-links">
                 <li><a href="#" onclick="showPage('home')">Home</a></li>
                 <li><a href="#" onclick="showPage('pricing')">Pricing</a></li>
+                <li><a href="#" onclick="showPage('qc-tool')">QC Tool</a></li>
             </ul>
             <div class="nav-buttons">
-                <a href="#" class="btn-outline" onclick="showPage('login')">Login</a>
-                <a href="#" class="btn-primary" onclick="showPage('signup')">Start Free</a>
+                <a href="#" class="sign-in" onclick="showPage('login')">Sign In</a>
+                <a href="#" class="try-free" onclick="showPage('signup')">Try Free</a>
             </div>
         </nav>
     </header>
@@ -502,173 +703,150 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-container">
-                <h1>AI-Powered Packaging Quality Control</h1>
-                <p>Catch costly errors before production with intelligent design analysis</p>
-                <a href="#" class="btn-primary hero-cta" onclick="showPage('signup')">Start Free Analysis</a>
-                <p class="hero-note">1 free check per week - no credit card required</p>
-            </div>
-        </section>
-
-        <!-- How It Works -->
-        <section class="how-it-works">
-            <div class="container">
-                <div class="section-title">
-                    <h2>How It Works</h2>
+                <div class="hero-content">
+                    <h1>AI-Powered Packaging <span class="highlight">Quality Control</span></h1>
+                    <p>Catch costly errors before production with intelligent design analysis that saves time and ensures compliance</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn-primary" onclick="showPage('signup')">Try Free →</a>
+                        <a href="#" class="btn-secondary" onclick="showPage('pricing')">See Pricing</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">95%</span>
+                            <span class="stat-label">Time Saved</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">99%</span>
+                            <span class="stat-label">Error Reduction</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Happy Brands</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">24hrs</span>
+                            <span class="stat-label">Support Response</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="steps">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <h3>Upload Design</h3>
-                        <p>Upload your packaging design in JPG, PNG, or PDF format</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <h3>Add Details</h3>
-                        <p>Fill in product details, dimensions, and target markets</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <h3>Get Analysis</h3>
-                        <p>Receive detailed AI analysis in 60 seconds</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">4</div>
-                        <h3>Download Report</h3>
-                        <p>Get comprehensive QC report with recommendations</p>
-                    </div>
+                <div class="hero-image">
+                    Packaging Design Preview
                 </div>
             </div>
         </section>
 
-        <!-- Features -->
+        <!-- Features Section -->
         <section class="features">
-            <div class="container">
-                <div class="section-title">
-                    <h2>What We Check</h2>
+            <div class="features-container">
+                <div class="features-header">
+                    <h2>Everything you need for better packaging</h2>
+                    <p>From concept to production, our AI-powered tools streamline your entire packaging workflow</p>
                 </div>
                 <div class="features-grid">
                     <div class="feature">
-                        <div class="feature-icon">✓</div>
-                        <h3>Text & Grammar</h3>
-                        <p>Spelling errors, grammar issues, and inconsistent terminology across all languages</p>
+                        <div class="feature-icon">⚡</div>
+                        <h3>Text & Grammar Check</h3>
+                        <p>AI-powered spelling, grammar, and terminology validation across multiple languages</p>
                     </div>
                     <div class="feature">
-                        <div class="feature-icon">⚖️</div>
-                        <h3>Regulatory Compliance</h3>
-                        <p>FDA, CPSC, COFEPRIS, and international requirements for your target markets</p>
+                        <div class="feature-icon green">🛡️</div>
+                        <h3>Compliance Validation</h3>
+                        <p>Comprehensive regulatory checking for FDA, CPSC, COFEPRIS, and international standards</p>
                     </div>
                     <div class="feature">
-                        <div class="feature-icon">👁️</div>
-                        <h3>Readability Analysis</h3>
-                        <p>Font sizes, contrast ratios, and text hierarchy for optimal legibility</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">🔍</div>
+                        <div class="feature-icon purple">🔍</div>
                         <h3>Claims Verification</h3>
-                        <p>Unsubstantiated claims detection and certification requirements</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">🧸</div>
-                        <h3>Toy Safety</h3>
-                        <p>Age-appropriate warnings, choking hazards, and safety compliance</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">🌎</div>
-                        <h3>Multi-Market Support</h3>
-                        <p>USA, Canada, Mexico, Latin America, EU, and UK regulations</p>
+                        <p>Detect unsubstantiated claims and verify certification requirements for your markets</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Pricing -->
-        <section class="pricing">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Simple Pricing</h2>
-                </div>
-                <div class="pricing-cards">
-                    <div class="pricing-card">
-                        <div class="pricing-title">Free</div>
-                        <div class="pricing-price">$0</div>
-                        <div class="pricing-period">per month</div>
-                        <ul class="pricing-features">
-                            <li>1 analysis per week</li>
-                            <li>Basic PDF report</li>
-                            <li>All checking features</li>
-                            <li>Email support</li>
-                        </ul>
-                        <a href="#" class="btn-primary" onclick="showPage('signup')">Start Free</a>
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <div class="testimonials-container">
+                <h2>Trusted by leading brands</h2>
+                <p class="testimonials-subtitle">See what our customers are saying about Creative Koi</p>
+                <div class="testimonials-grid">
+                    <div class="testimonial">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">"Creative Koi cut our packaging development time by 60%. The QC checker alone has saved us from countless print errors."</p>
+                        <div class="testimonial-author">Sarah Chen</div>
+                        <div class="testimonial-title">Design Director at FreshCorp</div>
                     </div>
-                    <div class="pricing-card featured">
-                        <div class="pricing-badge">Most Popular</div>
-                        <div class="pricing-title">Pro</div>
-                        <div class="pricing-price">$29</div>
-                        <div class="pricing-period">per month</div>
-                        <ul class="pricing-features">
-                            <li>Unlimited analyses</li>
-                            <li>Priority processing</li>
-                            <li>Enhanced reports</li>
-                            <li>Analysis history</li>
-                            <li>Priority support</li>
-                        </ul>
-                        <a href="#" class="btn-primary" onclick="showPage('signup')">Start Pro Trial</a>
+                    <div class="testimonial">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">"The compliance checks are incredible. We can now confidently launch products knowing they meet all regulatory requirements."</p>
+                        <div class="testimonial-author">Marcus Rodriguez</div>
+                        <div class="testimonial-title">Packaging Manager at BrightBrands</div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">"Our clients love the detailed reports. It's so much easier to get approval when they can see exactly what needs fixing."</p>
+                        <div class="testimonial-author">Lisa Wang</div>
+                        <div class="testimonial-title">Creative Lead at Studio Pack</div>
                     </div>
                 </div>
             </div>
         </section>
-    </div>
 
-    <!-- Pricing Page -->
-    <div id="pricing" class="page">
-        <section class="pricing">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Choose Your Plan</h2>
-                    <p>Start with our free plan and upgrade when you need more</p>
-                </div>
-                <div class="pricing-cards">
-                    <div class="pricing-card">
-                        <div class="pricing-title">Free</div>
-                        <div class="pricing-price">$0</div>
-                        <div class="pricing-period">per month</div>
-                        <ul class="pricing-features">
-                            <li>1 analysis per week</li>
-                            <li>All checking features</li>
-                            <li>Basic PDF report</li>
-                            <li>Last 3 analyses saved</li>
-                            <li>Email support</li>
-                        </ul>
-                        <a href="#" class="btn-primary" onclick="showPage('signup')">Start Free</a>
-                    </div>
-                    <div class="pricing-card featured">
-                        <div class="pricing-badge">Most Popular</div>
-                        <div class="pricing-title">Pro</div>
-                        <div class="pricing-price">$29</div>
-                        <div class="pricing-period">per month</div>
-                        <ul class="pricing-features">
-                            <li>Unlimited analyses</li>
-                            <li>Priority processing</li>
-                            <li>Enhanced PDF reports</li>
-                            <li>Complete analysis history</li>
-                            <li>Priority email support</li>
-                            <li>Advanced compliance checks</li>
-                        </ul>
-                        <a href="#" class="btn-primary" onclick="showPage('signup')">Start Pro Trial</a>
-                    </div>
-                </div>
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="cta-container">
+                <h2>Ready to transform your packaging workflow?</h2>
+                <p>Join hundreds of brands already using Creative Koi to create better packaging faster.</p>
+                <a href="#" class="cta-button" onclick="showPage('signup')">Start Free Today →</a>
             </div>
         </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-grid">
+                    <div class="footer-column">
+                        <h4>Creative Koi</h4>
+                        <p>AI-powered packaging tools for CPG brands, agencies, and designers.</p>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="#" onclick="showPage('qc-tool')">QC Checker</a></li>
+                            <li><a href="#" onclick="showPage('pricing')">Pricing</a></li>
+                            <li><a href="#">API Docs</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Refund Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2024 Creative Koi Designs | Made with ❤️ for packaging designers</p>
+                </div>
+            </div>
+        </footer>
     </div>
 
     <!-- Login Page -->
     <div id="login" class="page">
         <div class="auth-container">
-            <h2 class="auth-title">Login to PackageCheck</h2>
+            <h2 class="auth-title">Sign In</h2>
             <form class="auth-form" onsubmit="handleLogin(event)">
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Password" required>
-                <button type="submit">Login</button>
+                <input type="email" placeholder="Work Email" required autocomplete="off">
+                <input type="password" placeholder="Password" required autocomplete="off">
+                <button type="submit">Sign In</button>
             </form>
             <div class="auth-switch">
                 Don't have an account? <a href="#" onclick="showPage('signup')">Sign up</a>
@@ -680,18 +858,19 @@
     <div id="signup" class="page">
         <div class="auth-container">
             <h2 class="auth-title">Create Your Account</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 2rem;">Join thousands of brands using Creative Koi to streamline their packaging workflow.</p>
             <form class="auth-form" onsubmit="handleSignup(event)">
-                <input type="email" placeholder="Email" required>
+                <input type="email" placeholder="Work Email" required>
                 <input type="password" placeholder="Password" required>
                 <select required>
-                    <option value="">Select Plan</option>
-                    <option value="free">Free - 1 analysis/week</option>
+                    <option value="">Choose your plan</option>
+                    <option value="free">Free - 1 analysis per week</option>
                     <option value="pro">Pro - $29/month unlimited</option>
                 </select>
-                <button type="submit">Create Account</button>
+                <button type="submit">Create Account & Start Free</button>
             </form>
             <div class="auth-switch">
-                Already have an account? <a href="#" onclick="showPage('login')">Login</a>
+                Already have an account? <a href="#" onclick="showPage('login')">Sign in</a>
             </div>
         </div>
     </div>
@@ -701,32 +880,29 @@
         <section class="qc-tool">
             <div class="tool-container">
                 <div class="tool-header">
-                    <h1>AI Packaging Analysis</h1>
-                    <p>Upload your design and get comprehensive quality control analysis</p>
+                    <h1>QC Checker</h1>
+                    <p>Comprehensive quality control and compliance analysis</p>
                 </div>
                 
                 <div class="tool-grid">
-                    <!-- Upload and Form Section -->
-                    <div class="upload-section">
-                        <h3>Package Analysis</h3>
+                    <!-- Upload and Form Panel -->
+                    <div class="tool-panel">
+                        <h3 class="panel-title">Upload & Analysis Settings</h3>
                         
                         <!-- File Upload -->
                         <div class="upload-area" onclick="document.getElementById('fileInput').click()">
                             <input type="file" id="fileInput" accept=".jpg,.png,.pdf" style="display: none;" onchange="handleFileUpload(event)">
-                            <div id="uploadText">
+                            <div id="uploadContent">
+                                <div class="upload-icon">📄</div>
                                 <p><strong>Click to upload or drag and drop</strong></p>
                                 <p>JPG, PNG, PDF up to 10MB</p>
                             </div>
-                            <div id="fileInfo" class="hidden">
-                                <p id="fileName"></p>
-                                <p id="fileSize"></p>
-                            </div>
                         </div>
 
-                        <!-- Package Information Form -->
-                        <form id="analysisForm">
+                        <!-- Analysis Form -->
+                        <form id="analysisForm" onsubmit="handleAnalysis(event)">
                             <div class="form-group">
-                                <label>Package Dimensions (for font size compliance)</label>
+                                <label>Package Dimensions</label>
                                 <input type="text" placeholder="e.g., 5in x 3in" required>
                             </div>
 
@@ -755,19 +931,11 @@
                                         <option value="adult">Adult</option>
                                     </select>
                                 </div>
-                                <div class="form-group">
-                                    <label>
-                                        <input type="checkbox"> Contains small parts
-                                    </label>
-                                    <label>
-                                        <input type="checkbox"> Electronic components
-                                    </label>
-                                </div>
                             </div>
 
                             <div class="form-group">
                                 <label>Target Markets</label>
-                                <div class="checkbox-group">
+                                <div class="checkbox-grid">
                                     <div class="checkbox-item">
                                         <input type="checkbox" id="usa"> <label for="usa">USA</label>
                                     </div>
@@ -810,13 +978,56 @@
                         </form>
                     </div>
 
-                    <!-- Results Section -->
-                    <div class="results-section">
-                        <h3>Analysis Results</h3>
+                    <!-- Results Panel -->
+                    <div class="tool-panel">
+                        <h3 class="panel-title">Analysis Results</h3>
                         <div id="resultsContent" class="results-placeholder">
-                            <p>Upload a design and fill out the form to get started</p>
-                            <p>Your AI-powered analysis will appear here with detailed findings and recommendations</p>
+                            <div class="icon">🛡️</div>
+                            <p><strong>Upload artwork to begin</strong></p>
+                            <p>Select your industry category and upload packaging artwork to start comprehensive QC analysis.</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Pricing Page -->
+    <div id="pricing" class="page">
+        <section style="padding: 80px 0; background: white;">
+            <div class="features-container">
+                <div class="features-header">
+                    <h2>Simple, transparent pricing</h2>
+                    <p>Choose the plan that's right for your team. Upgrade or downgrade at any time.</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 800px; margin: 0 auto;">
+                    <div style="background: white; border: 2px solid #e0e0e0; border-radius: 12px; padding: 2rem; text-align: center;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Free</h3>
+                        <div style="font-size: 3rem; font-weight: bold; color: #4285f4; margin-bottom: 0.5rem;">$0</div>
+                        <p style="color: #666; margin-bottom: 2rem;">per month</p>
+                        <ul style="list-style: none; margin-bottom: 2rem; text-align: left;">
+                            <li style="padding: 0.5rem 0;">✓ 1 analysis per week</li>
+                            <li style="padding: 0.5rem 0;">✓ All checking features</li>
+                            <li style="padding: 0.5rem 0;">✓ Basic PDF report</li>
+                            <li style="padding: 0.5rem 0;">✓ Email support</li>
+                        </ul>
+                        <a href="#" class="btn-primary" onclick="showPage('signup')" style="width: 100%; text-align: center;">Start Free</a>
+                    </div>
+                    
+                    <div style="background: white; border: 2px solid #4285f4; border-radius: 12px; padding: 2rem; text-align: center; position: relative; transform: scale(1.05);">
+                        <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #4285f4; color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;">Most Popular</div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Pro</h3>
+                        <div style="font-size: 3rem; font-weight: bold; color: #4285f4; margin-bottom: 0.5rem;">$29</div>
+                        <p style="color: #666; margin-bottom: 2rem;">per month</p>
+                        <ul style="list-style: none; margin-bottom: 2rem; text-align: left;">
+                            <li style="padding: 0.5rem 0;">✓ Unlimited analyses</li>
+                            <li style="padding: 0.5rem 0;">✓ Priority processing</li>
+                            <li style="padding: 0.5rem 0;">✓ Enhanced reports</li>
+                            <li style="padding: 0.5rem 0;">✓ Analysis history</li>
+                            <li style="padding: 0.5rem 0;">✓ Priority support</li>
+                        </ul>
+                        <a href="#" class="btn-primary" onclick="showPage('signup')" style="width: 100%; text-align: center;">Start Pro Trial</a>
                     </div>
                 </div>
             </div>
@@ -842,15 +1053,14 @@
         const file = event.target.files[0];
         if (file) {
             uploadedFile = file;
-            document.getElementById('uploadText').classList.add('hidden');
-            document.getElementById('fileInfo').classList.remove('hidden');
-            document.getElementById('fileName').textContent = file.name;
-            document.getElementById('fileSize').textContent = `${(file.size / 1024 / 1024).toFixed(2)} MB`;
-            
-            // Update upload area styling
             const uploadArea = document.querySelector('.upload-area');
-            uploadArea.style.borderColor = '#34a853';
-            uploadArea.style.background = '#e8f5e8';
+            uploadArea.classList.add('has-file');
+            
+            document.getElementById('uploadContent').innerHTML = `
+                <div class="upload-icon">✅</div>
+                <p><strong>${file.name}</strong></p>
+                <p>${(file.size / 1024 / 1024).toFixed(2)} MB - Ready for analysis</p>
+            `;
         }
     }
 
@@ -866,39 +1076,107 @@
         }
     }
 
+    // Handle analysis form submission
+    function handleAnalysis(event) {
+        event.preventDefault();
+        
+        if (!uploadedFile) {
+            alert('Please upload a file first');
+            return;
+        }
+
+        const analyzeBtn = document.getElementById('analyzeBtn');
+        const resultsContent = document.getElementById('resultsContent');
+        
+        // Show loading state
+        analyzeBtn.textContent = 'Analyzing...';
+        analyzeBtn.disabled = true;
+        
+        resultsContent.innerHTML = `
+            <div class="icon">⏳</div>
+            <p><strong>Analyzing your packaging design...</strong></p>
+            <p>Our AI is checking for compliance, text errors, and design issues.</p>
+        `;
+
+        // Simulate analysis (replace with real AI API call)
+        setTimeout(() => {
+            showMockResults();
+            analyzeBtn.textContent = 'Analyze Package';
+            analyzeBtn.disabled = false;
+        }, 3000);
+    }
+
+    // Show mock analysis results
+    function showMockResults() {
+        const resultsContent = document.getElementById('resultsContent');
+        resultsContent.innerHTML = `
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <div style="font-size: 3rem; font-weight: bold; color: #4285f4;">82/100</div>
+                <div style="background: #ffc107; color: white; padding: 0.5rem 1rem; border-radius: 20px; display: inline-block; margin-top: 0.5rem;">Good</div>
+            </div>
+            
+            <div style="space-y: 1rem;">
+                <div style="border-left: 4px solid #34a853; padding: 1rem; background: #f0f9f0; margin-bottom: 1rem;">
+                    <div style="font-weight: bold; color: #34a853;">✅ Text & Grammar - 90/100</div>
+                    <p style="margin: 0.5rem 0; color: #666;">All checks passed successfully - No issues found</p>
+                </div>
+                
+                <div style="border-left: 4px solid #ffc107; padding: 1rem; background: #fffbf0; margin-bottom: 1rem;">
+                    <div style="font-weight: bold; color: #f57c00;">⚠️ Compliance Check - 75/100</div>
+                    <p style="margin: 0.5rem 0; color: #666;"><strong>Issues found (1):</strong></p>
+                    <div style="background: #fff3cd; padding: 0.75rem; border-radius: 6px; margin: 0.5rem 0;">
+                        <strong>Warning:</strong> Missing allergen statement for nuts<br>
+                        <strong>Location:</strong> Bottom panel<br>
+                        <strong>Recommendation:</strong> Add "Contains: Tree nuts" statement in required font size
+                    </div>
+                </div>
+                
+                <div style="border-left: 4px solid #4285f4; padding: 1rem; background: #f0f4ff;">
+                    <div style="font-weight: bold; color: #4285f4;">ℹ️ Claims Verification - 80/100</div>
+                    <p style="margin: 0.5rem 0; color: #666;">Organic claim detected - verify USDA certification is current</p>
+                </div>
+            </div>
+            
+            <button style="width: 100%; background: #4285f4; color: white; padding: 1rem; border: none; border-radius: 6px; font-weight: 500; margin-top: 1rem;">
+                Download Detailed Report
+            </button>
+        `;
+    }
+
     // Drag and drop functionality
     const uploadArea = document.querySelector('.upload-area');
     
-    uploadArea.addEventListener('dragover', (e) => {
-        e.preventDefault();
-        uploadArea.classList.add('dragover');
-    });
+    if (uploadArea) {
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.style.background = '#e8f0fe';
+        });
 
-    uploadArea.addEventListener('dragleave', () => {
-        uploadArea.classList.remove('dragover');
-    });
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.style.background = '#f8f9ff';
+        });
 
-    uploadArea.addEventListener('drop', (e) => {
-        e.preventDefault();
-        uploadArea.classList.remove('dragover');
-        
-        const files = e.dataTransfer.files;
-        if (files.length > 0) {
-            const file = files[0];
-            if (file.type.match('image.*') || file.type === 'application/pdf') {
-                document.getElementById('fileInput').files = files;
-                handleFileUpload({ target: { files: files } });
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.style.background = '#f8f9ff';
+            
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                const file = files[0];
+                if (file.type.match('image.*') || file.type === 'application/pdf') {
+                    document.getElementById('fileInput').files = files;
+                    handleFileUpload({ target: { files: files } });
+                }
             }
-        }
-    });
+        });
+    }
 
     // Authentication handlers
     function handleLogin(event) {
         event.preventDefault();
         const email = event.target.querySelector('input[type="email"]').value;
-        const password = event.target.querySelector('input[type="password"]').value;
         
-        // Simulate login - in real app, this would be an API call
+        // Simulate login
         currentUser = { email, plan: 'free' };
         showPage('qc-tool');
     }
@@ -906,9 +1184,14 @@
     function handleSignup(event) {
         event.preventDefault();
         const email = event.target.querySelector('input[type="email"]').value;
-        const password = event.target.querySelector('input[type="password"]').value;
         const plan = event.target.querySelector('select').value;
         
-        // Simulate signup - in real app, this would be an API call
+        // Simulate signup
         currentUser = { email, plan };
+        showPage('qc-tool');
+    }
+</script>
 ```
+
+</body>
+</html>

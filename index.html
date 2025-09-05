@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PackageCheck - AI-Powered Packaging QC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+```
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        line-height: 1.6;
+        color: #333;
+    }
+
+    .header {
+        background: white;
+        padding: 1rem 0;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #4285f4;
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #666;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: #4285f4;
+    }
+
+    .nav-buttons {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .btn-outline {
+        color: #4285f4;
+        border: 2px solid #4285f4;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+
+    .btn-outline:hover {
+        background: #4285f4;
+        color: white;
+    }
+
+    .btn-primary {
+        background: #4285f4;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background 0.3s;
+    }
+
+    .btn-primary:hover {
+        background: #3367d6;
+    }
+
+    .main-content {
+        padding-top: 80px;
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #f8f9ff 0%, #e8f0fe 100%);
+        padding: 80px 0;
+        text-align: center;
+    }
+
+    .hero-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+        color: #1a1a1a;
+    }
+
+    .hero p {
+        font-size: 1.25rem;
+        color: #666;
+        margin-bottom: 2rem;
+    }
+
+    .hero-cta {
+        margin-bottom: 1rem;
+    }
+
+    .hero-note {
+        color: #888;
+        font-size: 0.9rem;
+    }
+
+    .how-it-works {
+        padding: 80px 0;
+        background: white;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .section-title h2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+
+    .step {
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .step-number {
+        width: 60px;
+        height: 60px;
+        background: #4285f4;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 0 auto 1.5rem;
+    }
+
+    .features {
+        padding: 80px 0;
+        background: #f8f9ff;
+    }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .feature {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .feature-icon {
+        width: 50px;
+        height: 50px;
+        background: #34a853;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .pricing {
+        padding: 80px 0;
+        background: white;
+    }
+
+    .pricing-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .pricing-card {
+        background: white;
+        border: 2px solid #e0e0e0;
+        border-radius: 12px;
+        padding: 2rem;
+        text-align: center;
+        position: relative;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .pricing-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .pricing-card.featured {
+        border-color: #4285f4;
+        transform: scale(1.05);
+    }
+
+    .pricing-badge {
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #4285f4;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+
+    .pricing-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .pricing-price {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #4285f4;
+        margin-bottom: 0.5rem;
+    }
+
+    .pricing-period {
+        color: #666;
+        margin-bottom: 2rem;
+    }
+
+    .pricing-features {
+        list-style: none;
+        margin-bottom: 2rem;
+    }
+
+    .pricing-features li {
+        padding: 0.5rem 0;
+        color: #666;
+    }
+
+    .page {
+        display: none;
+        min-height: calc(100vh - 80px);
+    }
+
+    .page.active {
+        display: block;
+    }
+
+    .qc-tool {
+        padding: 40px 0;
+        background: #f8f9ff;
+        min-height: calc(100vh - 80px);
+    }
+
+    .tool-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    .tool-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .tool-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+
+    .upload-section {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .upload-area {
+        border: 2px dashed #4285f4;
+        border-radius: 12px;
+        padding: 3rem;
+        text-align: center;
+        background: #f8f9ff;
+        margin-bottom: 2rem;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .upload-area:hover {
+        background: #e8f0fe;
+    }
+
+    .upload-area.dragover {
+        background: #e8f0fe;
+        border-color: #3367d6;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+    }
+
+    .form-group select,
+    .form-group input {
+        width: 100%;
+        padding: 0.75rem;
+        border: 2px solid #e0e0e0;
+        border-radius: 6px;
+        font-size: 1rem;
+    }
+
+    .checkbox-group {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 0.5rem;
+    }
+
+    .checkbox-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .analyze-btn {
+        width: 100%;
+        background: #4285f4;
+        color: white;
+        padding: 1rem;
+        border: none;
+        border-radius: 6px;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .analyze-btn:hover {
+        background: #3367d6;
+    }
+
+    .analyze-btn:disabled {
+        background: #ccc;
+        cursor: not-allowed;
+    }
+
+    .results-section {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .results-placeholder {
+        text-align: center;
+        color: #666;
+        padding: 4rem 2rem;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .auth-container {
+        max-width: 400px;
+        margin: 4rem auto;
+        padding: 2rem;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .auth-title {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .auth-form input {
+        width: 100%;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+        border: 2px solid #e0e0e0;
+        border-radius: 6px;
+        font-size: 1rem;
+    }
+
+    .auth-form button {
+        width: 100%;
+        background: #4285f4;
+        color: white;
+        padding: 0.75rem;
+        border: none;
+        border-radius: 6px;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+    .auth-switch {
+        text-align: center;
+        margin-top: 1rem;
+        color: #666;
+    }
+
+    .auth-switch a {
+        color: #4285f4;
+        text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+        .hero h1 {
+            font-size: 2rem;
+        }
+        
+        .tool-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .nav-links {
+            display: none;
+        }
+    }
+</style>
+```
+
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">PackageCheck</div>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" onclick="showPage('pricing')">Pricing</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="#" class="btn-outline" onclick="showPage('login')">Login</a>
+                <a href="#" class="btn-primary" onclick="showPage('signup')">Start Free</a>
+            </div>
+        </nav>
+    </header>
+
+```
+<main class="main-content">
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-container">
+                <h1>AI-Powered Packaging Quality Control</h1>
+                <p>Catch costly errors before production with intelligent design analysis</p>
+                <a href="#" class="btn-primary hero-cta" onclick="showPage('signup')">Start Free Analysis</a>
+                <p class="hero-note">1 free check per week - no credit card required</p>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="how-it-works">
+            <div class="container">
+                <div class="section-title">
+                    <h2>How It Works</h2>
+                </div>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Upload Design</h3>
+                        <p>Upload your packaging design in JPG, PNG, or PDF format</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Add Details</h3>
+                        <p>Fill in product details, dimensions, and target markets</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Get Analysis</h3>
+                        <p>Receive detailed AI analysis in 60 seconds</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Download Report</h3>
+                        <p>Get comprehensive QC report with recommendations</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>What We Check</h2>
+                </div>
+                <div class="features-grid">
+                    <div class="feature">
+                        <div class="feature-icon">✓</div>
+                        <h3>Text & Grammar</h3>
+                        <p>Spelling errors, grammar issues, and inconsistent terminology across all languages</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">⚖️</div>
+                        <h3>Regulatory Compliance</h3>
+                        <p>FDA, CPSC, COFEPRIS, and international requirements for your target markets</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">👁️</div>
+                        <h3>Readability Analysis</h3>
+                        <p>Font sizes, contrast ratios, and text hierarchy for optimal legibility</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🔍</div>
+                        <h3>Claims Verification</h3>
+                        <p>Unsubstantiated claims detection and certification requirements</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🧸</div>
+                        <h3>Toy Safety</h3>
+                        <p>Age-appropriate warnings, choking hazards, and safety compliance</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🌎</div>
+                        <h3>Multi-Market Support</h3>
+                        <p>USA, Canada, Mexico, Latin America, EU, and UK regulations</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section class="pricing">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Simple Pricing</h2>
+                </div>
+                <div class="pricing-cards">
+                    <div class="pricing-card">
+                        <div class="pricing-title">Free</div>
+                        <div class="pricing-price">$0</div>
+                        <div class="pricing-period">per month</div>
+                        <ul class="pricing-features">
+                            <li>1 analysis per week</li>
+                            <li>Basic PDF report</li>
+                            <li>All checking features</li>
+                            <li>Email support</li>
+                        </ul>
+                        <a href="#" class="btn-primary" onclick="showPage('signup')">Start Free</a>
+                    </div>
+                    <div class="pricing-card featured">
+                        <div class="pricing-badge">Most Popular</div>
+                        <div class="pricing-title">Pro</div>
+                        <div class="pricing-price">$29</div>
+                        <div class="pricing-period">per month</div>
+                        <ul class="pricing-features">
+                            <li>Unlimited analyses</li>
+                            <li>Priority processing</li>
+                            <li>Enhanced reports</li>
+                            <li>Analysis history</li>
+                            <li>Priority support</li>
+                        </ul>
+                        <a href="#" class="btn-primary" onclick="showPage('signup')">Start Pro Trial</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Pricing Page -->
+    <div id="pricing" class="page">
+        <section class="pricing">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Choose Your Plan</h2>
+                    <p>Start with our free plan and upgrade when you need more</p>
+                </div>
+                <div class="pricing-cards">
+                    <div class="pricing-card">
+                        <div class="pricing-title">Free</div>
+                        <div class="pricing-price">$0</div>
+                        <div class="pricing-period">per month</div>
+                        <ul class="pricing-features">
+                            <li>1 analysis per week</li>
+                            <li>All checking features</li>
+                            <li>Basic PDF report</li>
+                            <li>Last 3 analyses saved</li>
+                            <li>Email support</li>
+                        </ul>
+                        <a href="#" class="btn-primary" onclick="showPage('signup')">Start Free</a>
+                    </div>
+                    <div class="pricing-card featured">
+                        <div class="pricing-badge">Most Popular</div>
+                        <div class="pricing-title">Pro</div>
+                        <div class="pricing-price">$29</div>
+                        <div class="pricing-period">per month</div>
+                        <ul class="pricing-features">
+                            <li>Unlimited analyses</li>
+                            <li>Priority processing</li>
+                            <li>Enhanced PDF reports</li>
+                            <li>Complete analysis history</li>
+                            <li>Priority email support</li>
+                            <li>Advanced compliance checks</li>
+                        </ul>
+                        <a href="#" class="btn-primary" onclick="showPage('signup')">Start Pro Trial</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Login Page -->
+    <div id="login" class="page">
+        <div class="auth-container">
+            <h2 class="auth-title">Login to PackageCheck</h2>
+            <form class="auth-form" onsubmit="handleLogin(event)">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <div class="auth-switch">
+                Don't have an account? <a href="#" onclick="showPage('signup')">Sign up</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Page -->
+    <div id="signup" class="page">
+        <div class="auth-container">
+            <h2 class="auth-title">Create Your Account</h2>
+            <form class="auth-form" onsubmit="handleSignup(event)">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <select required>
+                    <option value="">Select Plan</option>
+                    <option value="free">Free - 1 analysis/week</option>
+                    <option value="pro">Pro - $29/month unlimited</option>
+                </select>
+                <button type="submit">Create Account</button>
+            </form>
+            <div class="auth-switch">
+                Already have an account? <a href="#" onclick="showPage('login')">Login</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- QC Tool Page -->
+    <div id="qc-tool" class="page">
+        <section class="qc-tool">
+            <div class="tool-container">
+                <div class="tool-header">
+                    <h1>AI Packaging Analysis</h1>
+                    <p>Upload your design and get comprehensive quality control analysis</p>
+                </div>
+                
+                <div class="tool-grid">
+                    <!-- Upload and Form Section -->
+                    <div class="upload-section">
+                        <h3>Package Analysis</h3>
+                        
+                        <!-- File Upload -->
+                        <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+                            <input type="file" id="fileInput" accept=".jpg,.png,.pdf" style="display: none;" onchange="handleFileUpload(event)">
+                            <div id="uploadText">
+                                <p><strong>Click to upload or drag and drop</strong></p>
+                                <p>JPG, PNG, PDF up to 10MB</p>
+                            </div>
+                            <div id="fileInfo" class="hidden">
+                                <p id="fileName"></p>
+                                <p id="fileSize"></p>
+                            </div>
+                        </div>
+
+                        <!-- Package Information Form -->
+                        <form id="analysisForm">
+                            <div class="form-group">
+                                <label>Package Dimensions (for font size compliance)</label>
+                                <input type="text" placeholder="e.g., 5in x 3in" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Product Category</label>
+                                <select id="productCategory" required onchange="toggleToyFields()">
+                                    <option value="">Select Category</option>
+                                    <option value="food">Food</option>
+                                    <option value="beverage">Beverage</option>
+                                    <option value="cosmetics">Cosmetics</option>
+                                    <option value="supplement">Supplement</option>
+                                    <option value="toys">Toys</option>
+                                    <option value="general">General</option>
+                                </select>
+                            </div>
+
+                            <!-- Toy-specific fields -->
+                            <div id="toyFields" class="hidden">
+                                <div class="form-group">
+                                    <label>Age Range</label>
+                                    <select>
+                                        <option value="0-3">0-3 years</option>
+                                        <option value="3-6">3-6 years</option>
+                                        <option value="6-12">6-12 years</option>
+                                        <option value="12+">12+ years</option>
+                                        <option value="adult">Adult</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox"> Contains small parts
+                                    </label>
+                                    <label>
+                                        <input type="checkbox"> Electronic components
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Target Markets</label>
+                                <div class="checkbox-group">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="usa"> <label for="usa">USA</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="canada"> <label for="canada">Canada</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="mexico"> <label for="mexico">Mexico</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="latam"> <label for="latam">Latin America</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="eu"> <label for="eu">EU</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="uk"> <label for="uk">UK</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Languages on Package</label>
+                                <input type="text" placeholder="e.g., English, Spanish, French">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Product Claims</label>
+                                <input type="text" placeholder="e.g., Organic, Natural, Clinically Tested">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Existing Certifications</label>
+                                <input type="text" placeholder="e.g., USDA Organic, FDA Approved">
+                            </div>
+
+                            <button type="submit" class="analyze-btn" id="analyzeBtn">
+                                Analyze Package
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Results Section -->
+                    <div class="results-section">
+                        <h3>Analysis Results</h3>
+                        <div id="resultsContent" class="results-placeholder">
+                            <p>Upload a design and fill out the form to get started</p>
+                            <p>Your AI-powered analysis will appear here with detailed findings and recommendations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<script>
+    // Global state
+    let currentUser = null;
+    let uploadedFile = null;
+
+    // Page navigation
+    function showPage(pageId) {
+        document.querySelectorAll('.page').forEach(page => {
+            page.classList.remove('active');
+        });
+        document.getElementById(pageId).classList.add('active');
+    }
+
+    // File upload handling
+    function handleFileUpload(event) {
+        const file = event.target.files[0];
+        if (file) {
+            uploadedFile = file;
+            document.getElementById('uploadText').classList.add('hidden');
+            document.getElementById('fileInfo').classList.remove('hidden');
+            document.getElementById('fileName').textContent = file.name;
+            document.getElementById('fileSize').textContent = `${(file.size / 1024 / 1024).toFixed(2)} MB`;
+            
+            // Update upload area styling
+            const uploadArea = document.querySelector('.upload-area');
+            uploadArea.style.borderColor = '#34a853';
+            uploadArea.style.background = '#e8f5e8';
+        }
+    }
+
+    // Toggle toy-specific fields
+    function toggleToyFields() {
+        const category = document.getElementById('productCategory').value;
+        const toyFields = document.getElementById('toyFields');
+        
+        if (category === 'toys') {
+            toyFields.classList.remove('hidden');
+        } else {
+            toyFields.classList.add('hidden');
+        }
+    }
+
+    // Drag and drop functionality
+    const uploadArea = document.querySelector('.upload-area');
+    
+    uploadArea.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        uploadArea.classList.add('dragover');
+    });
+
+    uploadArea.addEventListener('dragleave', () => {
+        uploadArea.classList.remove('dragover');
+    });
+
+    uploadArea.addEventListener('drop', (e) => {
+        e.preventDefault();
+        uploadArea.classList.remove('dragover');
+        
+        const files = e.dataTransfer.files;
+        if (files.length > 0) {
+            const file = files[0];
+            if (file.type.match('image.*') || file.type === 'application/pdf') {
+                document.getElementById('fileInput').files = files;
+                handleFileUpload({ target: { files: files } });
+            }
+        }
+    });
+
+    // Authentication handlers
+    function handleLogin(event) {
+        event.preventDefault();
+        const email = event.target.querySelector('input[type="email"]').value;
+        const password = event.target.querySelector('input[type="password"]').value;
+        
+        // Simulate login - in real app, this would be an API call
+        currentUser = { email, plan: 'free' };
+        showPage('qc-tool');
+    }
+
+    function handleSignup(event) {
+        event.preventDefault();
+        const email = event.target.querySelector('input[type="email"]').value;
+        const password = event.target.querySelector('input[type="password"]').value;
+        const plan = event.target.querySelector('select').value;
+        
+        // Simulate signup - in real app, this would be an API call
+        currentUser = { email, plan };
+```
